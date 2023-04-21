@@ -1,3 +1,4 @@
+/* 1. Landing + Nav */
 .landing-bg {
   background: linear-gradient(
     312.73deg,
@@ -39,12 +40,70 @@
 }
 
 nav {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   padding: 16px 32px;
   max-width: 1180px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.navbar__toggle {
+  display: none;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.navbar__toggle:hover {
+  cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+  background-color: var(--soft-grey);
+  position: absolute;
+  border-radius: 6px;
+  height: 3px;
+  width: 80%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 200ms ease-in-out;
+}
+
+.line1 {
+  top: 25%;
+}
+
+[aria-expanded="true"] .line1 {
+  transform: scale(1.5) translate(-13px, 8px) rotate(45deg);
+}
+
+.line2 {
+  top: 50%;
+}
+
+[aria-expanded="true"] .line2 {
+  opacity: 0;
+}
+
+.line3 {
+  top: 75%;
+}
+
+[aria-expanded="true"] .line3 {
+  transform: scale(1.5) translate(-13px, -10px) rotate(-45deg);
 }
 
 nav img {
@@ -69,7 +128,7 @@ nav img {
 }
 
 .nav__link a:hover {
-  color: #2476ff;
+  color: var(--soft-blue);
   font-weight: bold;
 }
 
@@ -181,6 +240,10 @@ nav img {
   background-image: url(/assets/logo_icons/weave.png);
 }
 
+/* 1. End Of Landing + Nav */
+
+/* 2. Beginning of Benefits */
+
 .key__flex {
   display: flex;
   flex-direction: column;
@@ -204,6 +267,14 @@ nav img {
   flex: 1;
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
   gap: 22px;
+  transition: all 300ms ease-in-out;
+}
+
+.key__card:hover {
+  transform: scale(1.05);
+  border-radius: 16px;
+  background-color: var(--off-white-lighter);
+  cursor: pointer;
 }
 
 .key__card > img {
@@ -212,13 +283,13 @@ nav img {
 }
 
 .key__card p {
-  color: #677788;
+  color: var(--text-light-grey);
   line-height: 1.5;
 }
 
 .key__card a {
   font-weight: bold;
-  color: #2476ff;
+  color: var(--soft-blue);
 }
 
 .container.pre-banner__first {
@@ -239,6 +310,10 @@ nav img {
   margin-bottom: 2.5rem;
 }
 
+/* 2. End of Benefits */
+
+/* 3. Beginning of Why us */
+
 .why-front {
   display: flex;
   flex-direction: column;
@@ -252,7 +327,7 @@ nav img {
 
 .why-front > p {
   margin-bottom: 2rem;
-  color: #677788;
+  color: var(--text-light-grey);
   max-width: 500px;
   text-align: center;
   font-size: 16px;
@@ -288,7 +363,7 @@ nav img {
 .dot {
   height: 50px;
   width: 50px;
-  background-color: #ecf2ff;
+  background-color: var(--off-white-lighter);
   border-radius: 50%;
   position: relative;
 }
@@ -311,7 +386,7 @@ nav img {
 .dot::after {
   height: 6px;
   width: 6px;
-  background-color: #0066ff;
+  background-color: var(--off-blue-green);
   border-radius: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -326,6 +401,10 @@ nav img {
   background-attachment: fixed;
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
 }
+
+/* 3. End of why us */
+
+/* 4. Beginning of Hub spot + worlds best */
 
 .hub__spot-section {
   display: flex;
@@ -368,7 +447,7 @@ nav img {
 }
 
 .worlds-best__banner h3 {
-  color: #5f6368;
+  color: var(--soft-grey);
 }
 
 .hubspot__right > p {
@@ -394,10 +473,22 @@ nav img {
   width: 10vmin;
 }
 
+/* 4. End of Hub spot + worlds best */
+
+/* 5.Start of pricing */
+
 .pricing-options {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.pricing-options > h3 {
+  margin-bottom: 10px;
+}
+
+.pricing-options > p {
+  margin-bottom: 60px;
 }
 
 .pricing-info {
@@ -413,7 +504,7 @@ nav img {
 
 .pricing__card > h2 {
   font-size: 50px;
-  color: #677788;
+  color: var(--text-light-grey);
   margin-bottom: 40px;
 }
 
@@ -428,14 +519,14 @@ nav img {
 .pricing__card > p:first-of-type {
   font-size: 16px;
   line-height: 1.5;
-  color: #677788;
+  color: var(--text-light-grey);
   margin-bottom: 64px;
 }
 
 .pricing__card > p:last-of-type {
   margin-top: 24px;
   font-size: 12px;
-  color: #677788;
+  color: var(--text-light-grey);
 }
 
 .price__grid {
@@ -457,6 +548,10 @@ nav img {
   width: 50px;
 }
 
+/* 5.End of pricing */
+
+/* 6. Start of form */
+
 .form__section {
   display: flex;
   background-color: #20335b;
@@ -476,19 +571,19 @@ nav img {
   color: white;
 }
 
-.form__section-left > h3 {
+.form__section-left > .testimony__top > h3 {
   font-weight: 700;
   font-size: 26px;
   margin-bottom: 10px;
 }
 
-.form__section-left > p:first-of-type {
+.form__section-left p:first-of-type {
   line-height: 1.5;
-  color: #677788;
+  color: var(--text-light-grey);
   margin-bottom: 34px;
 }
 
-.form__section-left > hr {
+.form__section-left hr {
   width: 180px;
   background-color: #fff;
   margin-bottom: 32px;
@@ -497,17 +592,17 @@ nav img {
 .form__section-left p:nth-of-type(2) {
   font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 60px;
+  margin-bottom: 2rem;
 }
 
-.form__section-left > h4 {
+.form__section-left > div > h4 {
   font-weight: 700;
   margin-bottom: 4px;
 }
 
-.form__section-left > p:nth-of-type(3) {
+.form__section-left > div > p {
   font-size: 14px;
-  color: #677788;
+  color: var(--text-light-grey);
   margin-bottom: 60px;
 }
 
@@ -560,7 +655,7 @@ form > textarea {
 
 form > label {
   line-height: 1.375;
-  color: #5f6368;
+  color: var(--soft-grey);
 }
 
 form > label > input {
@@ -585,13 +680,17 @@ form > button {
   padding: 1rem 1.5rem;
   border-radius: 32px;
   color: white;
-  background-color: #0066ff;
+  background-color: var(--off-blue-green);
   font-weight: 500;
 }
 
 form > button:hover {
   cursor: pointer;
 }
+
+/* 6. End of form */
+
+/* 7. Start of Footer */
 
 footer {
   margin-top: 80px;
@@ -604,6 +703,9 @@ footer {
 
 .footer__top {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .footer__resources {
@@ -623,11 +725,11 @@ footer {
 }
 
 .footer__comp-info {
-  color: #5f6368;
+  color: var(--soft-grey);
 }
 
 .footer__comp-info > p:hover {
-  color: #2476ff;
+  color: var(--soft-blue);
   cursor: pointer;
 }
 
@@ -641,18 +743,18 @@ footer {
 
 .footer__resource > ul > li {
   margin-bottom: 10px;
-  color: #5f6368;
+  color: var(--soft-grey);
 }
 
 .footer__resource > ul > li:hover {
-  color: #2476ff;
+  color: var(--soft-blue);
 }
 
 .footer__hire {
   color: white;
   font-size: 8px;
   padding: 4px;
-  background-color: #0066ff;
+  background-color: var(--off-blue-green);
   border-radius: 4px;
   margin-left: 4px;
 }
@@ -671,7 +773,7 @@ footer {
 }
 
 .footer__bottom-top > p {
-  color: #677788;
+  color: var(--text-light-grey);
 }
 
 .footer__bottom-top > p > span:hover {
@@ -687,8 +789,8 @@ footer {
 .social__link > i {
   display: grid;
   place-items: center;
-  color: #677788;
-  background-color: #ecf2ff;
+  color: var(--text-light-grey);
+  background-color: var(--off-white-lighter);
   width: 30px;
   height: 30px;
   border-radius: 8px;
@@ -696,14 +798,15 @@ footer {
 }
 
 .social__link > i:hover {
-  background-color: #677788;
-  color: #ecf2ff;
+  background-color: var(--text-light-grey);
+  color: var(--off-white-lighter);
 }
 
-.social__links > select {
+.footer__bottom-top > select {
   border: none;
   padding: 0 1rem;
   border-radius: 4px;
+  height: 50px;
 }
 
 .footer__bottom-bottom {
@@ -712,9 +815,11 @@ footer {
 }
 
 .footer__bottom-bottom > p {
-  color: #677788;
+  color: var(--text-light-grey);
 }
 
 .footer__bottom-bottom > p:first-of-type {
   margin-bottom: 21px;
 }
+
+/* 7. End of Footer */

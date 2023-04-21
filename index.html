@@ -24,6 +24,15 @@
     <div class="landing-bg"></div>
     <nav>
       <img src="./assets/project_logo/logo.svg" alt="" />
+      <button
+        class="navbar__toggle"
+        aria-expanded="false"
+        aria-controls="nav__links"
+      >
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </button>
       <ul class="nav__links">
         <li class="nav__link">
           <a href="#">Home</a>
@@ -247,24 +256,28 @@
       <section>
         <div class="container form__section">
           <div class="form__section-left">
-            <h3>Hire Us</h3>
-            <p>
-              Whatever your goal - <br />
-              we will get you there
-            </p>
-            <hr />
-            <p>
-              <em
-                >"I love front! I love the ease of use, I love the fact that I
-                have total creative freedom..."</em
-              >
-            </p>
-            <h4>Gary Moore</h4>
-            <p>Head of Commercials, Slack</p>
-            <div class="form__pics">
-              <img src="./assets/people/woman_one.jpg" alt="" />
-              <img src="/assets/people/woman_two.jpg" alt="" />
-              <img src="/assets/people/man_one.jpg" alt="" />
+            <div class="testimony__top">
+              <h3>Hire Us</h3>
+              <p>
+                Whatever your goal - <br />
+                we will get you there
+              </p>
+              <hr />
+              <p>
+                <em
+                  >"I love front! I love the ease of use, I love the fact that I
+                  have total creative freedom..."</em
+                >
+              </p>
+            </div>
+            <div class="testimony__bot">
+              <h4>Gary Moore</h4>
+              <p>Head of Commercials, Slack</p>
+              <div class="form__pics">
+                <img src="./assets/people/woman_one.jpg" alt="" />
+                <img src="/assets/people/woman_two.jpg" alt="" />
+                <img src="/assets/people/man_one.jpg" alt="" />
+              </div>
             </div>
           </div>
           <form method="post" action="/form-info">
@@ -671,10 +684,10 @@
               <a href="" class="social__link"
                 ><i class="fa-brands fa-github"></i
               ></a>
-              <select name="language" id="language">
-                <option value="america">🇺🇸 United States</option>
-              </select>
             </div>
+            <select name="language" id="language">
+              <option value="america">🇺🇸 United States</option>
+            </select>
           </div>
           <div class="footer__bottom-bottom">
             <p>&copy; Front. 2022 Responsive designs. All rights reserved.</p>
@@ -688,5 +701,17 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const navButton = document.querySelector("button[aria-expanded]");
+
+      function toggleNav({ target }) {
+        const expanded =
+          target.getAttribute("aria-expanded") === "true" || false;
+        navButton.setAttribute("aria-expanded", !expanded);
+      }
+
+      navButton.addEventListener("click", toggleNav);
+    </script>
   </body>
 </html>

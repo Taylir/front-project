@@ -1,0 +1,248 @@
+@media (max-width: 1023px) {
+  nav {
+    border-radius: 0 0 16px 16px;
+  }
+
+  [aria-controls="nav__links"] {
+    display: block;
+  }
+
+  [aria-expanded="false"] + .nav__links {
+    display: none;
+  }
+
+  [aria-expanded="true"] + .nav__links {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 75px 75px;
+    position: absolute;
+    height: calc(100vh);
+    max-width: none;
+    width: 100vw;
+    top: 86px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 2rem;
+  }
+
+  [aria-expanded="true"] + .nav__links > li:last-child {
+    grid-column: span 5;
+  }
+
+  .benefit__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pre-banner__first {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pre-banner__left {
+    padding: 2rem;
+  }
+
+  .hub__spot-section {
+    flex-direction: column;
+  }
+
+  .hubspot__left {
+    display: grid;
+    place-items: center;
+  }
+
+  .hubspot__left > img {
+    width: 75%;
+  }
+
+  .hubspot__dots {
+    top: 60%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hubspot__right {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .pricing-info {
+    flex-direction: column;
+  }
+
+  .pricing__card {
+    text-align: center;
+  }
+
+  .form__section {
+    flex-direction: column;
+  }
+
+  .form__section-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .testimony__bot,
+  .testimony__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .testimony__top {
+    flex: 5;
+    max-width: 450px;
+  }
+
+  .testimony__top > hr {
+    width: 100%;
+  }
+
+  .testimony__bot {
+    flex: 5;
+  }
+
+  .footer__resources {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer__resource {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  [aria-expanded="true"] + .nav__links {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 75px);
+  }
+
+  [aria-expanded="true"] + .nav__links > li:last-child {
+    grid-column: span 1;
+  }
+
+  .landing__hero {
+    flex-direction: column;
+  }
+
+  .hero__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__right {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .benefit__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .title__dots {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .title__dot {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .dot__wrapper {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .dot:before {
+    display: none;
+  }
+
+  .best__logos {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  .best__logos img {
+    width: 50%;
+  }
+
+  .price__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form__section-left {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form * {
+    width: 100%;
+  }
+
+  form > h3,
+  form > textarea,
+  form > label,
+  form > button,
+  form > p {
+    grid-column: span 1;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__comp-info {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .footer__resource {
+    text-align: center;
+  }
+
+  .footer__bottom-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .social__links {
+    justify-content: center;
+  }
+
+  .hero__right {
+    grid-template-areas:
+      "google google . . . . . atlassisn atlassisn . . . . . asana asana"
+      "google google . . . . . atlassisn atlassisn . . . . . asana asana"
+      ". . . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      "paypal paypal . . . . . . . weave weave . . . . ."
+      "paypal paypal . . . . . . . weave weave . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . . . ."
+      ". . . . google-A google-A . . . . . . . . . ."
+      ". . . . google-A google-A . . . . . . . . . ."
+      ". . . . . . . . . . . . . calander calander ."
+      ". . . . . . . . . . . . . calander calander .";
+  }
+}
